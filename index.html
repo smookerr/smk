@@ -12,6 +12,16 @@
       background-attachment: fixed;
       color: #fff;
       font-family: Arial, sans-serif;
+      animation: slide-in 1s ease-in-out;
+    }
+
+    @keyframes slide-in {
+      from {
+        transform: translateX(-500px);
+      }
+      to {
+        transform: translateX(0);
+      }
     }
 
     .container {
@@ -69,33 +79,6 @@
       width: 200px;
     }
 
-    .audio-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      background-color: #000;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .audio-controls button {
-      margin: 0 10px;
-      padding: 5px 10px;
-      background-color: #555;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      color: #fff;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .audio-controls button:hover {
-      background-color: #777;
-    }
-
     .telegram-button {
       position: absolute;
       bottom: 0;
@@ -116,43 +99,24 @@
     .telegram-button:hover {
       background-color: #0099dd;
     }
-
-    .part {
-      display: inline-block;
-      width: 50%;
-      vertical-align: top;
-    }
-
-    .part:first-child {
-      margin-right: 10px;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="part">
-      <h1>Моя биография</h1>
-      <div>
-        <img src="ava.jpg" alt="Мое фото">
-      </div>
-      <div>
-        <h2>Обо мне</h2>
-        <p>Меня зовут Ваня Инолинов, мне 15 лет. Я родился в небольшом городке в Германии, Франкфурт. С детства увлекаюсь компьютерами и программированием. В настоящее время занимаюсь веб-дизайном, OSINT и хакингом.</p>
-      </div>
+    <h1>Моя биография</h1>
+    <div>
+      <img src="ava.jpg" alt="Мое фото">
     </div>
-    <div class="part">
+    <div>
+      <h2>Обо мне</h2>
+      <p>Меня зовут Ваня Инолинов, мне 15 лет. Я родился в небольшом городке в Германии, Франкфурт. С детства увлекаюсь компьютерами и программированием. В настоящее время занимаюсь веб-дизайном, OSINT и хакингом.</p>
       <ul>
         <li><a href="https://t.me/fuckerdoxbin">Telegram</a></li>
         <li>Discord: internetcybersecurity</li>
       </ul>
-      <div class="audio-controls">
-        <button id="play-pause-button">Pause</button>
-        <button id="stop-button">Stop</button>
-      </div>
     </div>
   </div>
-  <audio id="audio-player" controls autoplay>
-    <source src="vzk1ll.mp3" type="audio/mpeg">
+  <audio controls autoplay>
     <source src="терзание.mp3" type="audio/mpeg">
   </audio>
 </body>
