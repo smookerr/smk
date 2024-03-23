@@ -41,16 +41,32 @@
       width: 150px;
       height: 150px;
       margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     p {
       line-height: 1.5;
+      text-align: justify;
     }
 
-    audio {
-      display: block;
-      margin: 0 auto;
-      width: 100%;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    li {
+      margin: 0 10px;
+      padding: 10px;
+      background-color: #555;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    li:hover {
+      background-color: #777;
     }
   </style>
 </head>
@@ -65,10 +81,12 @@
       <p>Я родился в небольшом городке на юге России. С детства увлекался компьютерами и программированием. После школы поступил в университет на факультет информатики и вычислительной техники.</p>
       <p>После окончания университета работал программистом в нескольких компаниях. В настоящее время работаю фрилансером и занимаюсь разработкой веб-сайтов и мобильных приложений.</p>
       <p>Помимо программирования, увлекаюсь фотографией, музыкой и путешествиями. Я люблю открывать для себя новые места и знакомиться с новыми людьми.</p>
+      <ul>
+        <li>Фотография</li>
+        <li>Музыка</li>
+        <li>Путешествия</li>
+      </ul>
     </div>
-    <audio controls>
-      <source src="yeat-twizzy-rich.mp3" type="audio/mpeg">
-    </audio>
   </div>
 </body>
 </html>
