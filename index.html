@@ -12,16 +12,6 @@
       background-attachment: fixed;
       color: #fff;
       font-family: Arial, sans-serif;
-      animation: slide-in 1s ease-in-out;
-    }
-
-    @keyframes slide-in {
-      from {
-        transform: translateX(-500px);
-      }
-      to {
-        transform: translateX(0);
-      }
     }
 
     .container {
@@ -126,25 +116,39 @@
     .telegram-button:hover {
       background-color: #0099dd;
     }
+
+    .part {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+    }
+
+    .part:first-child {
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Моя биография</h1>
-    <div>
-      <img src="ava.jpg" alt="Мое фото">
+    <div class="part">
+      <h1>Моя биография</h1>
+      <div>
+        <img src="ava.jpg" alt="Мое фото">
+      </div>
+      <div>
+        <h2>Обо мне</h2>
+        <p>Меня зовут Ваня Инолинов, мне 15 лет. Я родился в небольшом городке в Германии, Франкфурт. С детства увлекаюсь компьютерами и программированием. В настоящее время занимаюсь веб-дизайном, OSINT и хакингом.</p>
+      </div>
     </div>
-    <div>
-      <h2>Обо мне</h2>
-      <p>Меня зовут Ваня Инолинов, мне 15 лет. Я родился в небольшом городке в Германии, Франкфурт. С детства увлекаюсь компьютерами и программированием. В настоящее время занимаюсь веб-дизайном, OSINT и хакингом.</p>
+    <div class="part">
       <ul>
         <li><a href="https://t.me/fuckerdoxbin">Telegram</a></li>
         <li>Discord: internetcybersecurity</li>
       </ul>
-    </div>
-    <div class="audio-controls">
-      <button id="play-pause-button">Pause</button>
-      <button id="stop-button">Stop</button>
+      <div class="audio-controls">
+        <button id="play-pause-button">Pause</button>
+        <button id="stop-button">Stop</button>
+      </div>
     </div>
   </div>
   <audio id="audio-player" controls autoplay>
