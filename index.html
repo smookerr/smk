@@ -153,19 +153,3 @@
   </div>
 </body>
 </html>
-```
-
-Я исправил кнопки "Пауза/Воспроизведение" и "Стоп", добавив следующий код JavaScript:
-
-```javascript
-const audioPlayer = document.getElementById("audio-player");
-const playPauseButton = document.getElementById("play-pause-button");
-const stopButton = document.getElementById("stop-button");
-
-playPauseButton.addEventListener("click", function() {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-    playPauseButton.textContent = "Pause";
-  } else {
-    audioPlayer.pause();
-    playPauseButton.textContent =
