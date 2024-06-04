@@ -1,123 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Моя биография</title>
-  <style>
-    body {
-      background-image: url("fon.gif");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      animation: slide-in 1s ease-in-out;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Пример</title>
+    <script>
+        async function getNumber() {
+            const number = document.getElementById('numberInput').value;
+            const response = await fetch(`http://127.0.0.1:5000/get_number?number=${number}`);
+            const data = await response.json();
+            document.getElementById('numberResult').innerText = `Полученный номер: ${data.number}`;
+        }
 
-    @keyframes slide-in {
-      from {
-        transform: translateX(-500px);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 30px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    p {
-      line-height: 1.5;
-      text-align: justify;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    li {
-      margin: 0 10px;
-      padding: 10px;
-      background-color: #555;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    li:hover {
-      background-color: #777;
-    }
-
-    audio {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 200px;
-    }
-
-    .telegram-button {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200px;
-      height: 50px;
-      background-color: #0088cc;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      color: #fff;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 50px;
-      text-decoration: none;
-    }
-
-    .telegram-button:hover {
-      background-color: #0099dd;
-    }
-  </style>
+        async function getPrices() {
+            const response = await fetch('http://127.0.0.1:5000/get_prices');
+            const data = await response.json();
+            let pricesList = '';
+            for (const [product, price] of Object.entries(data)) {
+                pricesList += `<li>${product}: ${price} руб.</li>`;
+            }
+            document.getElementById('pricesResult').innerHTML = `<ul>${pricesList}</ul>`;
+        }
+    </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Моя биография</h1>
+    <h1>API Пример</h1>
+
     <div>
-      <img src="ava.jpg" alt="Мое фото">
+        <h2>Получить номер</h2>
+        <input type="number" id="numberInput" placeholder="Введите номер">
+        <button onclick="getNumber()">Получить номер</button>
+        <p id="numberResult"></p>
     </div>
+
     <div>
-      <h2>Обо мне</h2>
-      <p>Меня зовут Ваня Инолинов, мне 15 лет. Я родился в небольшом городке в Германии, Франкфурт. С детства увлекаюсь компьютерами и программированием. В настоящее время занимаюсь веб-дизайном, OSINT и хакингом.</p>
-      <ul>
-        <li><a href="https://t.me/fuckerdoxbin">Telegram</a></li>
-        <li>Discord: internetcybersecurity</li>
-      </ul>
+        <h2>Цены</h2>
+        <button onclick="getPrices()">Показать цены</button>
+        <div id="pricesResult"></div>
     </div>
-  </div>
-  <audio controls autoplay>
-    <source src="терзание.mp3" type="audio/mpeg">
-  </audio>
 </body>
 </html>
