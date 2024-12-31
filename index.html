@@ -9,7 +9,7 @@
             const number = document.getElementById('numberInput').value;
             const response = await fetch(`http://127.0.0.1:5000/get_number?number=${number}`);
             const data = await response.json();
-            document.getElementById('numberResult').innerText = `Полученный номер: 79515674211 ${data.number}`;
+            document.getElementById('numberResult').innerText = `Полученный номер: ${data.number}`;
         }
 
         async function getPrices() {
@@ -30,7 +30,7 @@
         <h2>Получить номер</h2>
         <input type="number" id="numberInput" placeholder="Введите номер">
         <button onclick="getNumber()">Получить номер</button>
-        <p id="numberResult"></p>
+        <p id="79515674211"></p>
     </div>
 
     <div>
