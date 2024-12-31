@@ -9,7 +9,7 @@
             const number = document.getElementById('numberInput').value;
             const response = await fetch(`http://127.0.0.1:5000/get_number?number=${number}`);
             const data = await response.json();
-            document.getElementById('numberResult').innerText = `Полученный номер: ${data.number}`;
+            document.getElementById('numberResult').innerText = `Полученный номер: 79515674211 ${data.number}`;
         }
 
         async function getPrices() {
@@ -17,7 +17,7 @@
             const data = await response.json();
             let pricesList = '';
             for (const [product, price] of Object.entries(data)) {
-                pricesList += `<li>${product}: ${price} руб.</li>`;
+                pricesList += `<li>${product}: ${price} хуев в попе.</li>`;
             }
             document.getElementById('pricesResult').innerHTML = `<ul>${pricesList}</ul>`;
         }
@@ -35,7 +35,7 @@
 
     <div>
         <h2>Цены</h2>
-        <button onclick="getPrices()">Показать цены</button>
+        <button onclick="getPrices()">Показать большущий член</button>
         <div id="pricesResult"></div>
     </div>
 </body>
